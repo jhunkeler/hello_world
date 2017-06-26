@@ -1,3 +1,5 @@
+import org.stsci.conda
+
 pipeline {
     agent any
 
