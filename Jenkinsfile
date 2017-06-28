@@ -1,4 +1,4 @@
-import org.stsci.CondaInstall
+import org.stsci.Conda
 
 pipeline {
     agent any
