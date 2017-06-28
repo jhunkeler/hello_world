@@ -1,4 +1,6 @@
+println("Importing...")
 import org.stsci.Conda
+println("Imported...")
 
 pipeline {
     agent any
