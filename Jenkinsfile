@@ -9,10 +9,13 @@ pipeline {
     stages {
         stage('Bootstrap') {
             steps {
+                println("Bootstrapping..")
                 script {
-		            cinst = new CondaInstaller("${WORKSPACE}/tmp")
-                    cinst.install()
+			println("IN script block")
+			cinst = new CondaInstaller("/tmp/killme")
+			cinst.install()
                 }
+		println("OUT of script block")
             }
         }
         stage('Build') {
