@@ -9,19 +9,20 @@ pipeline {
     stages {
         stage('Bootstrap') {
             steps {
-                sh '.jenkins/install_conda.sh'
+		        cinst = new CondaInstaller("${WORKSPACE}/tmp")
+                cinst.install()
             }
         }
         stage('Build') {
             steps {
                 echo 'Building..'
-		sh '.jenkins/build.sh'
+		        sh '.jenkins/build.sh'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-		sh 'test -f setup.py'
+		        sh 'test -f setup.py'
             }
         }
         stage('Deploy') {
