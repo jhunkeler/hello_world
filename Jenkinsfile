@@ -1,5 +1,6 @@
 println("Importing...")
 import org.stsci.Conda
+import org.stsci.CondaInstaller
 println("Imported...")
 
 pipeline {
