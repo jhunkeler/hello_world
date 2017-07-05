@@ -9,8 +9,10 @@ pipeline {
     stages {
         stage('Bootstrap') {
             steps {
-		        cinst = new CondaInstaller("${WORKSPACE}/tmp")
-                cinst.install()
+                script {
+		            cinst = new CondaInstaller("${WORKSPACE}/tmp")
+                    cinst.install()
+                }
             }
         }
         stage('Build') {
